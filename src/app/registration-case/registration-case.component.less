@@ -26,13 +26,16 @@ a {
 .header_name{
     color: #F6E7D8;
 }
+.text_case_title_resp{
+display: none;
+}
 
 .section_body{
     background-color: #F6E7D8;
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 140rem;
+    height: 100%;
     margin: 0rem;
 
 }
@@ -49,6 +52,12 @@ a {
     height: 29.1622rem;
     padding: 0rem 0rem 1.5rem 0rem;
 }
+.image_registration_resp_2{
+    display:none;
+}
+.image_registration_resp_1{
+    display:none;
+}
 .title{
     display: flex;
     align-items: center;
@@ -64,8 +73,32 @@ a {
     padding: 3rem 0rem 3rem 3rem;
 }
 .list_information{
-    padding: 3rem 8rem 0rem 0rem;
+    padding: 3rem 2rem 0rem 4rem;
 }
 .tile_padding{
     padding: 3rem;
+}
+
+@media(max-width:890px){
+    .text_case_title{
+display: none;
+    }
+    .text_case_title_resp{
+        display: flex;
+        text-align: center;
+    }
+.image_registration{
+    display: none;
+}
+.image_registration_resp_1{
+    display: flex;
+        width: 30rem;
+    height: 24.540rem;
+}
+
+
+}
+
+@media(max-width: 700px){
+    
 }

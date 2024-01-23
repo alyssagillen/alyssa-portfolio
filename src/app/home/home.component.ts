@@ -17,6 +17,5 @@ export class HomeComponent implements OnInit {
 
   goToCaseOne(){
     this.router.navigateByUrl('case-study-one')
-    console.log("click")
   }
 }
