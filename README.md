@@ -6,11 +6,10 @@ Components from library Taiga UI version ^3.62.0
 
 ## Structure
 
-       - Case Study One - Citi Online Registration (LIVE)
-      |
-HOME - - Case Study Two - Harvestly (WIP)
-      |
-       - Case Study Three - Bulletin (WIP)
+HOME
+- Case Study One - Citi Online Registration (LIVE)
+- Case Study Two - Harvestly (WIP)
+- Case Study Three - Bulletin (WIP)
 
 ##
 
