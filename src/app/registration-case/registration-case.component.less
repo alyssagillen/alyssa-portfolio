@@ -1,170 +1,203 @@
-@import '@taiga-ui/core/styles/taiga-ui-local.less';
-@import '@taiga-ui/core/styles/taiga-ui-theme.less';
-@import '@taiga-ui/core/styles/taiga-ui-fonts.less';
-@import '@taiga-ui/styles/taiga-ui-global.less';
+@import "@taiga-ui/core/styles/taiga-ui-local.less";
+@import "@taiga-ui/core/styles/taiga-ui-theme.less";
+@import "@taiga-ui/core/styles/taiga-ui-fonts.less";
+@import "@taiga-ui/styles/taiga-ui-global.less";
 
-body { 
-    margin: 0;   /* Remove body margins */
+/* Modifications to HTML element defaults */
+body {
+  margin: 0; /* Remove body margins */
 }
-
 a {
-    text-decoration: none;
-}
-.section_header{
-    padding: 0rem 4rem 0rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    background-color: #303030;
-}
-.section_header:hover{
-    background-color:  #365870
-}
-.header_title{
-    font-weight: normal;
-    color: #F6E7D8;
-}
-.header_title_resp{
-    display: none;
-}
-.header_name{
-    color: #F6E7D8;
-}
-.header_name_resp{
-    display: none;
-}
-.text_case_title_resp{
-display: none;
-}
-.text_case_subtitle_resp{
-
-    display: none;
+  text-decoration: none;
 }
 
-.section_body{
-    background-color: #F6E7D8;
+/* Header */
+.section_header {
+  padding: 0rem 4rem 0rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #303030;
+}
+.section_header:hover {
+  background-color: #365870;
+}
+.header_name {
+  color: #f6e7d8;
+}
+.header_name_resp {
+  display: none;
+}
+.header_title {
+  font-weight: normal;
+  color: #f6e7d8;
+}
+.header_title_resp {
+  display: none;
+}
+
+/* Body */
+.section_body {
+  background-color: #f6e7d8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin: 0rem;
+}
+.border {
+  border-radius: 2rem;
+  border-style: solid;
+  border-color: #303030;
+  margin: 3rem 0rem 0rem 0rem;
+  width: 90%;
+}
+
+/* Title tile*/
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.text_case_title_resp {
+  display: none;
+}
+.text_case_subtitle_resp {
+  display: none;
+}
+
+.image_registration {
+  width: 50rem;
+  height: 29.1622rem;
+  padding: 0rem 0rem 1.5rem 0rem;
+}
+.image_registration_resp_2 {
+  display: none;
+}
+.image_registration_resp_1 {
+  display: none;
+}
+/* Introduction */
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list_information {
+  padding: 4rem;
+}
+
+/* More Information about Case Study */
+.tile_padding {
+  padding: 3rem;
+}
+
+.paragraph {
+  width: 50%;
+  padding: 3rem 0rem 3rem 3rem;
+}
+
+@media (max-width: 890px) {
+  /* Title Tile*/
+  .text_case_title {
+    display: none;
+  }
+  /* Enabling Responsive Title Text */
+  .text_case_title_resp {
     display: flex;
-    align-items: center;
+    text-align: center;
+    margin-bottom: 0rem;
+  }
+  /* Enabling Responsive Subtitle Text */
+  .text_case_subtitle_resp {
+    display: flex;
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+  .image_registration {
+    display: none;
+  }
+  /* Enabling Responsive Image 1*/
+  .image_registration_resp_1 {
+    display: flex;
+    width: 30rem;
+    height: 24.54rem;
+  }
+}
+
+@media (max-width: 700px) {
+  /* Changing header format to column
+  (Alyssa Gillen/Portfolio)*/
+  .section_header {
     flex-direction: column;
-    height: 100%;
-    margin: 0rem;
-
+  }
+  .header_name {
+    margin-bottom: 0rem;
+  }
+  .header_title {
+    margin-top: 1rem;
+  }
+  /* List information in Introduction Tile*/
+  .list_information {
+    padding: 3rem 2rem 0rem 2rem;
+  }
 }
-.border{
-    border-radius: 2rem;
-    border-style: solid;
-    border-color: #303030;
-    margin: 3rem 0rem 0rem 0rem;
-    width: 90%;
-    
-}
-.image_registration{
-    width: 50rem;
-    height: 29.1622rem;
-    padding: 0rem 0rem 1.5rem 0rem;
-}
-.image_registration_resp_2{
-    display:none;
-}
-.image_registration_resp_1{
-    display:none;
-}
-.title{
+@media (max-width: 570px) {
+  .section_header {
+    padding: 0rem 1rem 0rem 1rem;
+  }
+  .intro {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.intro{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.paragraph{
-    width: 50%;
-    padding: 3rem 0rem 3rem 3rem;
-}
-.list_information{
-    padding: 4rem;
-}
-.tile_padding{
-    padding: 3rem;
-}
-@media(max-width:890px){
-    .text_case_title{
-display: none;
-    }
-    .text_case_title_resp{
-        display: flex;
-        text-align: center;
-        margin-bottom: 0rem;
-    }
-    .text_case_subtitle_resp{
-        display: flex;
-        text-align: center;
-        margin-top: 0.75rem;
-    }
-.image_registration{
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .image_registration_resp_1 {
     display: none;
-}
-.image_registration_resp_1{
+  }
+  .image_registration_resp_2 {
     display: flex;
-        width: 30rem;
-    height: 24.540rem;
-}
-
-
-}
-
-@media(max-width: 700px){
-    .section_header{
-        flex-direction: column;
-    }
-    .header_name {
-        margin-bottom: 0rem;
-      }
-      .header_title {
-        margin-top: 1rem;
-      }
-    .list_information{
-        padding: 3rem 2rem 0rem 2rem;
-    }
-    
-}
-@media(max-width: 570px){
-
-    .section_header {
-        padding: 0rem 1rem 0rem 1rem;
-      }
-      .intro{
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-    .paragraph{
-        width: 80%;
-        padding: 3rem 2rem 3rem 2rem;
-    }
-    .image_registration_resp_1{
-        display: none;
-    }
-    .image_registration_resp_2{
-        display: flex;
     height: 40rem;
     width: 20rem;
     padding-bottom: 2rem;
-    }
+  }
+  .paragraph {
+    width: 80%;
+    padding: 3rem 2rem 3rem 2rem;
+  }
+
 }
 
-@media(max-width: 447px){
-    .image_registration_resp_2{
+@media (max-width: 447px) {
+  .header_name {
+    display: none;
+  }
+  /* Enabling Responsive Header Text 
+  (Alyssa Gillen)*/
+  .header_name_resp {
+    display: flex;
+    color: #f6e7d8;
+    margin-bottom: 0rem;
+  }
+  /* Enabling Responsive Header Text
+  (Portfolio)*/
+  .header_title {
+    display: none;
+  }
+  .header_title_resp {
+    font-weight: normal;
+    color: #f6e7d8;
+    display: flex;
+    margin-top: 0.5rem;
+  }
+  .text_case_subtitle_resp {
+    padding: 2rem 1rem 1rem 1rem;
+    margin: 0rem;
+  }
+  .image_registration_resp_2 {
     height: 24rem;
     width: 12rem;
-    }
-    .text_case_subtitle_resp{
-        padding: 2rem 1rem 1rem 1rem;
-        margin: 0rem;
-    }
-    .tile_padding{
-        padding: 2rem;
-    }
-
+  }
+  .tile_padding {
+    padding: 2rem;
+  }
 }

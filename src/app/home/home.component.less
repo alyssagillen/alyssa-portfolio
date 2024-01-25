@@ -3,14 +3,36 @@
 @import "@taiga-ui/core/styles/taiga-ui-fonts.less";
 @import "@taiga-ui/styles/taiga-ui-global.less";
 
+/* Modifications to HTML element and Taiga style defaults */
 body {
   margin: 0; /* Remove body margins */
 }
+.tui-text_h2 {
+  margin: 0rem;
+}
+.tui-text_h4 {
+  margin: 0rem;
+  font-weight: normal;
+}
+a.tui-space_right-3 {
+  margin-right: 0rem;
+}
+a.tui-space_bottom-3 {
+  margin-bottom: 2rem;
+}
+
+/* Header */
 .section_header {
   padding: 0rem 4rem 0rem 4rem;
   display: flex;
   justify-content: space-between;
   background-color: #303030;
+}
+.header_name {
+  color: #f6e7d8;
+}
+.header_name_resp {
+  display: none;
 }
 .header_title {
   font-weight: normal;
@@ -19,13 +41,8 @@ body {
 .header_title_resp {
   display: none;
 }
-.header_name {
-  color: #f6e7d8;
-}
-.header_name_resp {
-  display: none;
-}
 
+/* Body */
 .section_body {
   background-color: #f6e7d8;
   display: flex;
@@ -34,25 +51,29 @@ body {
   height: 100%;
   margin: 0rem;
 }
+
+/* Introduction */
 .section_introduction {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem 0rem 3rem 0rem;
 }
+/* Left Section of Introduction */
+.section_intro_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  border-style: solid;
+  border-radius: 2rem;
+  margin: 3rem 1rem 3rem 0rem;
+}
+/* Role Section of Left Section */
 .section_role {
   display: flex;
   flex-direction: column;
   padding: 5rem 0rem 0rem 0rem;
-}
-
-.tui-text_h2 {
-  margin: 0rem;
-}
-
-.tui-text_h4 {
-  margin: 0rem;
-  font-weight: normal;
 }
 .text_role {
   color: #303030;
@@ -63,13 +84,6 @@ body {
   text-align: right;
   font-weight: normal;
   margin: 0rem 0rem 4rem 0rem;
-}
-.image_self {
-  width: 30rem;
-  height: 30rem;
-  margin: 3rem 0rem 3rem 1rem;
-  border-style: solid;
-  border-radius: 2rem;
 }
 .button_intro {
   width: 20rem;
@@ -89,26 +103,16 @@ body {
     });
 }
 
-a.tui-space_right-3 {
-  margin-right: 0rem;
-}
-a.tui-space_bottom-3 {
-  margin-bottom: 2rem;
-}
-
-.section_intro_left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Profile Picture Section, Right side */
+.image_self {
   width: 30rem;
+  height: 30rem;
+  margin: 3rem 0rem 3rem 1rem;
   border-style: solid;
   border-radius: 2rem;
-  margin: 3rem 1rem 3rem 0rem;
 }
 
-.text_portfolio_header {
-  padding-left: 5rem;
-}
+/* Case Study Tiles */
 .section_case {
   border-radius: 2rem;
   background: #f6e7d8;
@@ -125,6 +129,10 @@ a.tui-space_bottom-3 {
   display: flex;
   flex-direction: row;
 }
+.header_case_nobutton {
+  padding: 2.5rem 0rem 0.75rem 0rem;
+  width: 75%;
+}
 
 .text_case_title {
   margin: 0rem 0rem 0.65rem 0rem;
@@ -136,17 +144,6 @@ a.tui-space_bottom-3 {
   align-items: left;
   padding-right: 7rem;
 }
-.image_harvestly {
-  width: 50rem;
-  height: 25.114rem;
-  padding: 0rem 0rem 3rem 0rem;
-}
-.image_harvestly_resp_1 {
-  display: none;
-}
-.image_harvestly_resp_2 {
-    display: none;
-  }
 .image_registration {
   width: 50rem;
   height: 29.1622rem;
@@ -158,6 +155,17 @@ a.tui-space_bottom-3 {
 .image_registration_resp_2 {
   display: none;
 }
+.image_harvestly {
+  width: 50rem;
+  height: 25.114rem;
+  padding: 0rem 0rem 3rem 0rem;
+}
+.image_harvestly_resp_1 {
+  display: none;
+}
+.image_harvestly_resp_2 {
+  display: none;
+}
 .image_bulletin {
   width: 50rem;
   height: 30.8592rem;
@@ -167,32 +175,32 @@ a.tui-space_bottom-3 {
   display: none;
 }
 .image_bulletin_resp_2 {
-    display: none;
-  }
+  display: none;
+}
+
+/* Responsive Views */
 @media (max-width: 1024px) {
+  /* Removing border around left side of introduction */
   .section_intro_left {
     border-style: none;
     width: auto;
     padding-right: 4rem;
   }
+  /* Creating border on top and bottom of case study tiles 
+  (rather than full box border)*/
   .section_case {
     width: 100%;
     border-style: solid none solid none;
     border-radius: 0rem;
   }
-
 }
+
 @media (max-width: 935px) {
+  /* Changing introduction section to column format
+  Picture on top, Role and buttons below*/
   .section_introduction {
     flex-direction: column-reverse;
     align-items: center;
-  }
-  .text_sub_role {
-    margin-bottom: 3rem;
-  }
-  .image_self {
-    padding-left: 0rem;
-    margin-left: 0rem;
   }
   .section_intro_left {
     margin: 0rem;
@@ -201,14 +209,15 @@ a.tui-space_bottom-3 {
   .section_role {
     padding: 0rem;
   }
-  .image_registration {
-    display: none;
+  .text_sub_role {
+    margin-bottom: 3rem;
   }
-  .image_registration_resp_1 {
-    display: flex;
-    width: 30rem;
-    height: 24.54rem;
+  .image_self {
+    padding-left: 0rem;
+    margin-left: 0rem;
   }
+
+  /* Changing case study tiles to column format */
   .header_case {
     flex-direction: column;
     align-items: center;
@@ -218,35 +227,54 @@ a.tui-space_bottom-3 {
     padding-right: 0rem;
     padding-bottom: 3rem;
   }
+  .button_case {
+    justify-content: center;
+    width: 20rem;
+  }
+  .subtext {
+    text-align: center;
+  }
+  /* Disable browser-version image */
+  .image_registration {
+    display: none;
+  }
+  /* Enable responsive-version image 1 */
+  .image_registration_resp_1 {
+    display: flex;
+    width: 30rem;
+    height: 24.54rem;
+  }
+  /* Disable browser-version image */
+
   .image_harvestly {
     display: none;
   }
-    .image_harvestly_resp_1{
+  /* Enable responsive-version image 1 */
+
+  .image_harvestly_resp_1 {
     display: flex;
     height: 28.815;
     width: 30rem;
     padding-bottom: 2rem;
-
   }
+  /* Disable browser-version image */
+
   .image_bulletin {
     display: none;
   }
+  /* Enable responsive-version image 1 */
 
-    .image_bulletin_resp_1{
+  .image_bulletin_resp_1 {
     display: flex;
-        width:30rem;
-        height: 27.907em;
+    width: 30rem;
+    height: 27.907em;
     padding-bottom: 2rem;
-  }
-  .text_case {
-    padding-bottom: 2rem;
-  }
-  .button_case{
-    justify-content: center;
-    width: 20rem;
   }
 }
+
 @media (max-width: 700px) {
+  /* Changing header format to column 
+  (Alyssa Gillen/Portfolio) */
   .section_header {
     flex-direction: column;
   }
@@ -265,50 +293,63 @@ a.tui-space_bottom-3 {
     height: 25rem;
     width: 25rem;
   }
+  /* Case Study Tiles */
+  .text_case {
+    padding-bottom: 1rem;
+  }
+  .subtext {
+    font-size: 20px;
+  }
+
   .image_registration_resp_1 {
     display: none;
   }
+  /* Enable responsive-version image 2 */
+
   .image_registration_resp_2 {
     display: flex;
     height: 40rem;
     width: 20rem;
     padding-bottom: 2rem;
   }
-  .image_harvestly_resp_1{
-    display:none
+  .image_harvestly_resp_1 {
+    display: none;
   }
-  .image_bulletin_resp_1{
-    display:none
-  }
-    .image_harvestly_resp_2{
-        height: 28.855rem;
-        width: 15rem;
-        display: flex;
-        padding-bottom: 2rem;
+  /* Enable responsive-version image 2 */
 
+  .image_harvestly_resp_2 {
+    height: 38.4745rem;
+    width: 20rem;
+    display: flex;
+    padding-bottom: 2rem;
   }
-    .image_bulletin_resp_2{
-        height: 28.855rem;
-        width: 15rem;
-        display: flex;
-        padding-bottom: 2rem;
+  .image_bulletin_resp_1 {
+    display: none;
+  }
 
+  /* Enable responsive-version image 2 */
 
+  .image_bulletin_resp_2 {
+    height: 38.4745rem;
+    width: 20rem;
+    display: flex;
+    padding-bottom: 2rem;
   }
-  .subtext {
-    font-size: 20px;
-  }
-  
 }
+
 @media (max-width: 443px) {
   .header_name {
     display: none;
   }
+  /* Enabling Responsive Header Text 
+  (Alyssa Gillen)*/
   .header_name_resp {
     display: flex;
     color: #f6e7d8;
     margin-bottom: 0rem;
   }
+  /* Enabling Responsive Header Text
+  (Portfolio)*/
   .header_title {
     display: none;
   }
@@ -318,54 +359,54 @@ a.tui-space_bottom-3 {
     display: flex;
     margin-top: 0.5rem;
   }
-  .text_case_title{
-    text-align: center;
-  }
-.button_intro{
-    display: flex !important;
-    justify-content: center;
-}
-.button_case{
-  display: flex !important;
-    justify-content: center;
-}
+  /* Introduction Section */
   .image_self {
     height: 15rem;
     width: 15rem;
     margin-left: 0rem;
   }
-  [tuiWrapper][data-appearance="custom"] {
-    background: #303030;
-    color: #f6e7d8;
-    height: 4.5rem;
-    width: 18rem;
-    font-size: x-large;
-
-    .wrapper-hover({
-            background:  #365870
-        });
-
-    .wrapper-active({
-            background:  #365870
-        });
+  .button_intro {
+    display: flex !important;
+    justify-content: center;
   }
+  [tuiWrapper][data-appearance="custom"] {
+    width: 18rem;
+  }
+  /* Case Study Tiles */
+  .text_case_title {
+    text-align: center;
+  }
+
+  .button_case {
+    display: flex !important;
+    justify-content: center;
+  }
+
   .image_registration_resp_2 {
     height: 30rem;
     width: 15rem;
   }
-  @media (max-width:320px){
-    .button_intro{
-      width: 15rem;
-    }
-    .button_case{
-      width: 15rem;
-    }
-    .subtext{
-      font-size: 16px;
-    }
-
+  .image_harvestly_resp_2 {
+    height: 28.855rem;
+    width: 15rem;
+    display: flex;
+    padding-bottom: 2rem;
   }
-
-
-
+  .image_bulletin_resp_2 {
+    height: 28.855rem;
+    width: 15rem;
+    display: flex;
+    padding-bottom: 2rem;
+  }
+}
+@media (max-width: 320px) {
+  .button_intro {
+    width: 15rem;
+  }
+  .button_case {
+    width: 15rem;
+  }
+  .subtext {
+    font-size: 16px;
+  }
 }
